@@ -23,20 +23,12 @@ function App() {
 
   const handleFormSubmit = event =>{
     event.preventDefault();
-    API.getBooks(booksSearch)
+    console.log("In the handleformsubmit")
+    console.log(booksSearch)
+    API.getBook(booksSearch)
        .then(res=> setBooks(res.data))
        .catch(err=>console.log(err));
   };
-
-  //  function handleFormSubmit(event){
-  //      event.preventDefault();
-  //      if (formObject.title) {
-  //          API.saveBook({
-  //            title: formObject.title
-  //          })
-  //            .then(res => loadBooks())
-  //            .catch(err => console.log(err));
-  //  }
 
    return(
      <div>
